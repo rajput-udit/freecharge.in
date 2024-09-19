@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>freecharge.in</title>
+  <link rel="icon" href="images/favicon-new.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/lib/bootstrap.css">
+  <link rel="stylesheet" href="css/freecharge.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img class="ps-3" src="images/freecharge.png" style="width:12%" alt="freecharge.in">
+    </nav>
+  <div class="container-fluid p-4 m-0">
+    <div class="card p-2 b-4">
+      <div class="card-body">
+        <form id="invoiceForm">
+          <div class="row">
+
+            <div class="col-8">
+              <div class="card">
+                <div class="card-header">Enter Invoice Details</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="date">Date:</label>
+                      <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="emailId">Email Id:</label>
+                      <input type="email" class="form-control" id="emailId" placeholder="Email ID" minlength="7" maxlength="60" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="customerName">Customer Name:</label>
+                      <input type="text" class="form-control" id="customerName" minlength="4" placeholder="Your Name"
+                        required>
+                    </div>
+                    <div class="col-6">
+                      <label for="mobileNo">Mobile No:</label>
+                      <input type="number" class="form-control" id="mobileNo" min="1000000000" max="9999999999" placeholder="Registered mobile number"
+                        required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="accountNo">Account Number:</label>
+                      <input type="text" id="accountNo" class="form-control" minlength="9" maxlength="11" placeholder="Ex. 3820192099" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="serviceCode">Service Accounting Code:</label>
+                      <input type="text" id="serviceCode" class="form-control" minlength="7" maxlength="9" placeholder="Ex. 00998500" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="paymentMode">Mode of Payment:</label>
+                      <input type="text" class="form-control" id="paymentMode" maxlength="15">
+                    </div>
+                    <div class="col-6">
+                      <label for="recharge">Recharge done for:</label>
+                      <input type="number" class="form-control" id="recharge" min="1000000000" max="9999999999" placeholder="Number need to be recharge." required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="stateName">State Name:</label>
+                      <input type="text" class="form-control" id="stateName" minlength="2" maxlength="20" placeholder="State name" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="stateCode">State Code:</label>
+                      <input type="text" class="form-control" id="stateCode" minlength="1" maxlength="2" placeholder="Ex. 9" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <label for="pincode">Pincode:</label>
+                      <input type="text" class="form-control" id="pincode" minlength="6" maxlength="6" placeholder="Ex. 246761" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="city">City:</label>
+                      <input type="text" class="form-control" id="city" placeholder="City" minlength="2" maxlength="20" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card">
+                <div class="card-header">Transaction Details</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="transactionAmount">Transaction Amount:</label>
+                      <input type="number" class="form-control" id="transactionAmount" placeholder="666" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="couponCharges">Coupon Charges:</label>
+                      <input type="number" class="form-control" id="couponCharges">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="platformFee">Platform Fee:</label>
+                      <input type="number" class="form-control" id="platformFee" placeholder="3" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-2 d-md-flex justify-content-md-end p-2">
+              <button type="submit" class="btn btn-primary float-right">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  
+  <script src="js/lib/jquery-3.7.1.min.js"></script>
+  <script src="js/lib/bootstrap.min.js"></script>
+  <script src="js/invoiceForm.js"></script>
+</body>
+
+</html>

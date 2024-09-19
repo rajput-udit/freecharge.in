@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/lib/html2canvas.min.js"></script>
+    <script src="js/lib/FileSaver.min.js"></script>
+    <script src="js/lib/jspdf.min.js"></script>
+    <script defer="" src="js/lib/htmlToPDF.js"></script>
+    <script defer="" src="js/lib/webView.js"></script>
+    <title>Generate Payment Invoices | Freecharge</title>
+    <link rel="icon" href="images/favicon-new.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/lib/bootstrap.css">
+    <link rel="stylesheet" href="css/freecharge.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="overflow: scroll;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./InvoiceForm.html">
+                <img class="ps-3" src="images/freecharge.png" style="width:50%;" alt="freecharge.in">
+            </a>
+            <a class="navbar-brand" href="./InvoiceForm.html">
+              <img src="images/img_avatar1.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+              <b><div id="name" class="text-success text-wrap"></div></b>
+            </a>
+          </div>
+    </nav>
+    <!-- Full Page -->
+    <div class="MainPage">
+        <div class="PageAction">
+            <p><strong>Thank you!!! </strong>for using www.freecharge.in</p>
+            <!-- <div id="editor"></div> -->
+            <img src="images/sVXIP7wuI.png" id="download" style="cursor: pointer;">
+        </div>
+        <!-- Main PDF BODY -->
+        <div id="invoiceContent" class="InvoiceContent">
+            <!-- Header Wrap -->
+            <div class="InvoiceHeader">
+                <p>TAX INVOICE</p>
+                <img src="images/freecharge_icon.png" alt="FreeCharge.in - Recharge Made Free" width="151" height="34">
+            </img>
+            </div>
+            <!-- Header Wrap -->
+            <!-- Two Column Box -->
+            <div class="BasicInfoWrap">
+                <!-- First Box -->
+                <div class="FirstBox">
+                    <table class="BoxTable" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr style="margin: 10px 0px;">
+                                <td class="FieldLabel">Customer Name :</td>
+                                <td id="displayCustomerName" class="FieldValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Transaction Id :</td>
+                                <td class="FieldValue" id="pdfName"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Invoice no :</td>
+                                <td class="FieldValue" id="displayInvoiceNo"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Mobile no :</td>
+                                <td class="FieldValue" id="displayMobileNo"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="FieldLabel">Recharge done for :</td>
+                                <td class="FieldValue" id="displayRecharge"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- First Box -->
+                <!-- Second Box -->
+                <div class="SecondBox">
+                    <table class="BoxTable">
+                        <tbody>
+                            <tr>
+                                <td class="FieldLabel">Registered Email :</td>
+                                <td class="FieldValue" id="displayEmailId"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Date :</td>
+                                <td class="FieldValue" id="displayDate"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Account Number :</td>
+                                <td class="FieldValue" id="displayAccountNo"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Service Accounting code :</td>
+                                <td class="FieldValue" id="displayAccountCode"></td>
+                            </tr>
+                            <tr>
+                                <td class="FieldLabel">Mode Of Payment :</td>
+                                <td class="FieldValue">
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Second Box -->
+            </div>
+            <!-- Two Column Box -->
+            <!-- Main Table -->
+            <div class="MainTable">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th width="11%" style="text-align: left;">S.No.</th>
+                            <th width="55%" style="text-align: left;">Particular</th>
+                            <th width="34%" style="text-align: left;">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceTableBody">
+                        <!-- Table data will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Main Table -->
+            <!-- Signature Wrap -->
+            <div class="SignatureWrap">
+                <!-- Main Data -->
+                <div class="SignatureMain">
+                    <p>
+                        Freecharge Payment Technologies Pvt. Ltd <br>Registered Address : 11th Floor, Tower C, DLF
+                        Cyber Greens, DLF Cyber City, DLF Phase 3 , Gurugram,Haryana,122002, India <br>CIN:
+                        U74140HR2015PTC114857 <br>Website: www.freecharge.in <br>GSTIN: 06AAFCK7217F1ZO
+                        <br>Company PAN No. AAFCK7217F <br>Service Category: Other Support Services
+                        <br>Contact us at care@freecharge.com
+                    </p>
+                    <div class="Signature">
+                        <img
+                            src="images/signature.jpg">
+                        <p>Authorised Signatory</p>
+                    </div>
+                </div>
+                <!-- Main Data -->
+                <!-- Time Stamp -->
+                <!-- <p class="SignatureTimeStamp">Invoice generate on - 05-07-2023 | 4:15 PM</p> -->
+                <!-- Time Stamp -->
+            </div>
+            <!-- Signature Wrap -->
+        </div>
+        <!-- Main PDF Body -->
+    </div>
+    <!-- Full Page -->
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+body {
+    print-color-adjust: exact;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.MainPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.PageAction {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.PageAction p {
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+    .PageAction p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .PageAction p {
+        font-size: 11px;
+    }
+}
+
+.InvoiceContent {
+    border: 1px solid;
+    margin-top: 30px;
+}
+
+.InvoiceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    background-color: #F16122;
+}
+
+.InvoiceHeader p {
+    color: #fff;
+    font-weight: bolder;
+    font-family: sans-serif;
+    font-size: 20px;
+    transform: scaleY(1.2) scaleX(1.1);
+}
+
+@media screen and (max-width: 700px) {
+    .InvoiceHeader {
+        padding: 5px 20px;
+    }
+    .InvoiceHeader p {
+        font-size: 15px;
+        transform: scale(1);
+    }
+}
+
+.BasicInfoWrap {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.FieldLabel {
+    font-weight: bolder;
+}
+
+.FieldValue,
+.FieldLabel {
+    font-family: sans-serif;
+    font-size: 13px;
+    padding: 10px 0px;
+}
+
+.FieldValue {
+    padding-left: 10px;
+}
+
+.FirstBox {
+    border-right: 1px solid #999;
+}
+
+.FirstBox,
+.SecondBox {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BoxTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width: 700px) {
+    .BoxTable {
+        width: 60%;
+    }
+    .BasicInfoWrap {
+        width: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+    .FirstBox {
+        border: none;
+    }
+    .FieldLabel, .FieldValue {
+        font-size: 12px;
+    }
+    .FirstBox, .SecondBox {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .BoxTable {
+        width: 90%;
+    }
+    .FieldValue {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+.SignatureWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.SignatureMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.SignatureMain p {
+    width: 60%;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.75;
+}
+
+.Signature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Signature img {
+    width: 150px;
+    height: 120px;
+}
+
+.Signature p {
+    width: 100%;
+    text-align: center;
+}
+
+.SignatureTimeStamp {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .SignatureMain {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+    .SignatureMain p {
+        width: 95%;
+    }
+    .Signature {
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: 30px;
+    }
+    .Signature p {
+        text-align: end;
+        padding-right: 15px;
+    }
+}
+
+.MainTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.MainTable table {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid;
+    border-collapse: separate;
+}
+
+.MainTable table thead tr th {
+    padding: 8px 5px 8px 20px;
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+}
+
+.MainTable table tbody tr td {
+    padding: 8px 5px 8px 20px;
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+}
+
+.MainTable table thead tr th:first-child,
+.MainTable table tbody tr td:first-child {
+    border-left: none;
+}
+
+.MainTable table thead tr th {
+    border-top: none;
+}
+
+@media screen and (max-width: 700px) {
+    .MainTable {
+        padding: 30px 20px;
+    }
+    .MainTable table thead tr th {
+        padding: 8px 5px 8px 10px;
+    }
+    .MainTable table tbody tr td {
+        padding: 8px 5px 8px 10px;
+    }
+}
+
+.back-btn-wrapper {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+#back-btn {
+    width: 20px;
+    height: 15px;
+}
+
+.back-btn-wrapper:hover {
+    background-color: gainsboro;
+}
+
+.display-none {
+    display: none;
+}
