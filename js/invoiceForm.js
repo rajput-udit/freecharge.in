@@ -58,5 +58,5 @@ document.getElementById('invoiceForm').addEventListener('submit', function(event
     }).toString();
 
     // Redirect to the report page with the data
-    window.location.href = `Report.html?${urlParams}`;
+    window.location.href = `report.html?${urlParams}`;
 });
